@@ -3,7 +3,7 @@
       "name": "Pumpkin",
       "rating": 4.5,
       "price":90,
-      "categories": "Vegetables Seasonal",
+      "categories": "Vegetables",
       "description": "Fresh and nutritious pumpkin for your culinary needs. Great for soups, pies, and roasting.",
       "img": "https://i.ibb.co/dKBd6Nz/pumpkin.jpg"
     },
@@ -27,7 +27,7 @@
       "name": "Blueberry",
       "rating": 4.6,
       "price":90,
-      "categories": "Fruits Berries",
+      "categories": "Fruits",
       "description": "Plump and antioxidant-rich blueberries for your breakfast. Enhance your yogurt or cereal.",
       "img": "https://i.ibb.co/p1bngYn/blueberry.jpg"
     },
@@ -43,7 +43,7 @@
       "name": "Orange",
       "rating": 4.9,
       "price":70,
-      "categories": "Fruits Citrus",
+      "categories": "Fruits",
       "description": "Tangy and vitamin C-rich oranges to boost your immune system. Juicy and refreshing.",
       "img": "https://i.ibb.co/WfHRLvz/orange.jpg"
     },
@@ -92,7 +92,7 @@
       "name": "Komola Orange",
       "rating": 4.6,
       "price":90,
-      "categories": "Fruits Citrus",
+      "categories": "Fruits ",
       "description": "Imported sweet and tangy Komola Orange. Available in 50 gm to 1 kg sizes.",
       "img": "https://i.ibb.co/5nzJfd5/komola-Orange-imported-50-gm-1-kg.webp"
     },

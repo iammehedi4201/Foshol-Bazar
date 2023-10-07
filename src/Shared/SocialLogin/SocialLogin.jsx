@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import { AuthContext } from '../../Providers/AuthProvider';
 import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const SocialLogin = () => {
-    const { googleSignIn } = useContext(AuthContext)
+    const { googleSignIn, user } = useContext(AuthContext)
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || '/'
@@ -12,7 +12,7 @@ const SocialLogin = () => {
         try {
             const loggedUser = await googleSignIn();
             const userInfo = { name: loggedUser?.user?.displayName, email: loggedUser?.user?.email, photoURL: loggedUser?.user?.photoURL }
-            const response = await axios.post("http://localhost:3000/users", userInfo)
+            const response = await axios.post("https://foshol-bazar-server-site.vercel.app/users", userInfo)
             navigate(from, { replace: true });
         } catch (error) {
             throw error

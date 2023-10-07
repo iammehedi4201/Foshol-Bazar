@@ -18,7 +18,8 @@ const queryClient = new QueryClient()
 AOS.init();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  // <React.StrictMode>
+  <div>
     <AuthProvider>
       <HelmetProvider>
         <QueryClientProvider client={queryClient}>
@@ -27,5 +28,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       </HelmetProvider>
     </AuthProvider>
     <Toaster></Toaster>
-  </React.StrictMode>
+  </div>
+
+  // </React.StrictMode>
 );

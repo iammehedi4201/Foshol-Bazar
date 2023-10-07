@@ -30,14 +30,14 @@ const Login = () => {
     try {
       const loggedUser = await logIn(email, password);
       console.log("logged User is :-", loggedUser);
-      if (!loggedUser.user.emailVerified) {
-        Swal.fire({
-          icon: "warning",
-          title: "Email Verification Required",
-          text: "Please verify your email before logging in.",
-        });
-        return;
-      }
+      // if (!loggedUser.user.emailVerified) {
+      //   Swal.fire({
+      //     icon: "warning",
+      //     title: "Email Verification Required",
+      //     text: "Please verify your email before logging in.",
+      //   });
+      //   return;
+      // }
       Swal.fire({
         icon: "success",
         title: "Good Job!",

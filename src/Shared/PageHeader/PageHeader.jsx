@@ -1,21 +1,21 @@
 import React from 'react';
 import './pageHeader.css'
 
-const PageHeader = () => {
+const PageHeader = ({ sectionBackText, bgColor }) => {
     return (
-            <div className='bg-indigo-500 relative bg-img'>
-           
-            <div className='flex items-center justify-center max-w-screen-xl min-h-[40vh] mx-auto'>
-                <section className='z-10'>
-                       <h1 className='text-white font-bold text-4xl'>Fresh Fruites Shop</h1>
+        <section className={`bg-${bgColor}-500 relative bg-img`}>
+            <div className="flex items-center justify-center max-w-screen-xl min-h-[40vh] mx-auto">
+                <section className="z-10 space-y-4">
+                    <h1 className="text-white font-bold text-4xl">Foshol Bazar</h1>
+                    <p className="text-white font-bold text-xl text-center">Home \ </p>
                 </section>
             </div>
-            <div className='white-curve-after'></div>
-            <div className='section-back-text'>Shop</div>
-        </div>
-     
-     
-   
+            <div className="white-curve-after hidden sm:block"></div>
+            <div className="section-back-text">{sectionBackText}</div>
+        </section>
+
+
+
     );
 };
 

@@ -6,14 +6,15 @@ const PrivateRotes = ({ children }) => {
   const { user, loader } = useContext(AuthContext);
   let location = useLocation();
 
-  console.log("loader status from Private route  :",loader);
+  // console.log("loader status from Private route  :",loader);
 
-  console.log("User status from private route:",user);
+  // console.log("User status from private route:",user);
 
   if (loader) {
+    console.log("private loader is called");
     return (
       <div className="bg-black w-full min-h-screen flex items-center justify-center">
-        <span class="loader"></span>
+        <span className="loader"></span>
       </div>
     );
   }

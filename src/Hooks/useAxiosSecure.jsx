@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
 
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:3000',
+    baseURL: 'https://foshol-bazar-server-site.vercel.app',
 });
 
 const useAxiosSecure = () => {
@@ -14,7 +14,7 @@ const useAxiosSecure = () => {
     useEffect(() => {
         axiosSecure.interceptors.request.use((config) => {
             const token = localStorage.getItem('bazar-access-token');
-            console.log("token is from UseAxiosSecure :-", token);
+            // console.log("token is from UseAxiosSecure :-", token);
             if (token) {
                 config.headers.Authorization = `Bearer ${token}`;
             }

@@ -84,8 +84,8 @@ const Stats = () => {
           </div>
         </section>
         <div className="section-back-text">Stats</div>
-        <div className="white-curve-before"></div>
-        <div className="white-curve-after"></div>
+        <div className="white-curve-before hidden sm:block"></div>
+        <div className="white-curve-after hidden sm:block"></div>
       </div>
     </div>
   );

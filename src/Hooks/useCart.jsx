@@ -4,7 +4,6 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "./useAxiosSecure";
 
 const useCart = () => {
-
     const { user, loader } = useContext(AuthContext);
     const [axiosSecure] = useAxiosSecure();
 
@@ -15,7 +14,6 @@ const useCart = () => {
             try {
                 const res = await axiosSecure.get(`/cart-items?email=${user?.email}`)
                 return res.data
-
             } catch (error) {
                 throw error
             }

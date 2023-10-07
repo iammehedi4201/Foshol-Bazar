@@ -96,7 +96,7 @@ const SignUp = () => {
         //inserting UsersInfo 
         const userInfo = { name, email, photoUrl }
         //if no response is return it will not go to further .
-        const response = await axios.post('http://localhost:3000/users',userInfo)
+        const response = await axios.post(' http://localhost:3000/users',userInfo)
         Swal.fire({
           title: "Success!",
           text: "User Created Successfully. Check your email for verification link.",
@@ -125,11 +125,11 @@ const SignUp = () => {
 
   //Loader Set 
 
-  if (loader) {
-    return <div className="bg-black w-full min-h-screen flex items-center justify-center">
-      <span class="loader"></span>
-    </div>
-  }
+  // if (loader) {
+  //   return <div className="bg-black w-full min-h-screen flex items-center justify-center">
+  //     <span className="loader"></span>
+  //   </div>
+  // }
 
   return (
     <div>

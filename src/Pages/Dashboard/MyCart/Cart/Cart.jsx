@@ -15,7 +15,7 @@ const Cart = () => {
 
     //loading Cart items
     // useEffect(() => {
-    //   fetch(`http://localhost:3000/cart-items?email=${user?.email}`,{
+    //   fetch(`https://foshol-bazar-server-site.vercel.app/cart-items?email=${user?.email}`,{
     //          method:"GET",
     //          headers:{
     //              authorization :`Bearer ${localStorage.getItem("bazar-access-token")}`
@@ -44,7 +44,7 @@ const Cart = () => {
 
     //handle Delete Order
     const handleDeleteCartItem = (id) => {
-        fetch(`http://localhost:3000/cart-items/${id}`, {
+        fetch(`https://foshol-bazar-server-site.vercel.app/cart-items/${id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())
@@ -66,7 +66,7 @@ const Cart = () => {
         const updatedCartItemQuantity = {
             productQuantity,
         };
-        fetch(`http://localhost:3000/cart-items/${selectedCartItemInfo._id}`, {
+        fetch(`https://foshol-bazar-server-site.vercel.app/cart-items/${selectedCartItemInfo._id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",
@@ -90,10 +90,10 @@ const Cart = () => {
     };
 
 
-    //loading state :
+    // loading state :
     if (isCartLoading) {
-        <div className="bg-black w-full min-h-screen flex items-center justify-center">
-            <span class="loader"></span>
+        return <div className=" w-full min-h-screen flex items-center justify-center">
+            <span className="loading loading-infinity loading-lg text-white"></span>
         </div>
     }
 
@@ -107,12 +107,12 @@ const Cart = () => {
                         <p className="text-white font-bold text-xl text-center">Home \ </p>
                     </section>
                 </div>
-                <div className="white-curve-after"></div>
+                <div className="white-curve-after hidden sm:block"></div>
                 <div className="section-back-text">Cart</div>
             </section>
             {/* ---------- */}
             <section className="bg-[#1d1c22]">
-                <div className="flex items-center max-w-screen-xl min-h-[100vh] mx-auto p-10">
+                <div className="flex items-center max-w-screen-xl min-h-[100vh] mx-auto sm:p-10">
                     <div>
                         <section className="flex items-center  xl:mi-h-screen font-poppins bg-[#1d1c22]">
                             <div className="justify-center flex-1 px-1 py-6 mx-auto max-w-7xl lg:py-4 md:px-6">

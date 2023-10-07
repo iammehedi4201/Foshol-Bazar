@@ -3,7 +3,7 @@ import React from "react";
 const AboutUs = () => {
   return (
     <div >
-      <section   className="flex flex-col items-center bg-stone-100 xl:min-h-screen font-poppins dark:bg-[#1d1c22]  p-10">
+      <section className="flex flex-col items-center bg-stone-100 xl:min-h-screen font-poppins dark:bg-[#1d1c22]  sm:p-10">
         <div data-aos="fade-left" className="justify-center flex-1 max-w-6xl py-4 mx-auto lg:py-6 md:px-6">
           <div className="flex flex-wrap ">
             <div className="w-full px-4 mb-10 lg:w-1/2 lg:mb-0 ">

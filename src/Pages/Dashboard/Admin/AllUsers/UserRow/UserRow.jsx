@@ -1,10 +1,10 @@
 import React from 'react';
-import useAxiosSecure from '../../../../Hooks/useAxiosSecure';
 import toast from 'react-hot-toast';
-import useUsers from '../../../../Hooks/useUsers';
+import useAxiosSecure from '../../../../../Hooks/useAxiosSecure';
+import useUsers from '../../../../../Hooks/useUsers';
 
 
-const UserRow = ({ user, index, toggleAddUserModal, toggleEditUserModal }) => {
+const UserRow = ({ user, index }) => {
     const [axiosSecure] = useAxiosSecure();
     const [, , userRefetch] = useUsers();
     const { name, email, photoURL, photoUrl } = user;
@@ -18,27 +18,39 @@ const UserRow = ({ user, index, toggleAddUserModal, toggleEditUserModal }) => {
         } catch (error) {
             throw error
         }
-
-
     }
 
+    const handleDeleteUser = async (user) => {
+        try {
+            const response = await axiosSecure.delete(`/users/${user._id}`)
+                .then(response => {
+                    if (response.data.deletedCount > 0) {
+                        userRefetch();
+                        toast.success(`${user.name} Deleted Successfully `)
+                    }
+                })
+
+        } catch (error) {
+            throw error
+        }
+    }
 
     return (
-        <tr className="hover:bg-gray-100 dark:hover:bg-gray-700">
-            <td className="w-4 p-4">
+        <tr className="bg-black border-4 border-slate-800 hover:bg-slate-800 ">
+            <td className="w-4 p-5 ">
                 <div className="flex items-center">
                     <h3 className='text-white'>{index}</h3>
                 </div>
             </td>
-            <td className="flex items-center p-4 mr-12 space-x-6 whitespace-nowrap">
+            <td className="flex items-center p-5  mr-12 space-x-6 whitespace-nowrap shadow-inner shadow-cyan-600">
                 <img className="w-10 h-10 rounded-full" src={photoURL || photoUrl || "https://flowbite-admin-dashboard.vercel.app/images/users/neil-sims.png"} alt="Neil Sims avatar" />
-                <div className="text-sm font-normal text-gray-500 dark:text-gray-400">
+                <div className="text-sm font-normal text-gray-100 ">
                     <div className="text-base font-semibold text-gray-900 dark:text-white">{name}</div>
-                    <div className="text-sm font-normal text-gray-500 dark:text-gray-400">Web Developer</div>
+                    <div className="text-sm font-normal text-gray-100 ">Web Developer</div>
                 </div>
             </td>
-            <td className="max-w-sm p-4 overflow-hidden text-base font-normal text-gray-500 truncate xl:max-w-xs dark:text-gray-400">{email}</td>
-            <td className="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <td className="max-w-sm p-5  overflow-hidden text-base font-normal text-gray-100 truncate xl:max-w-xs shadow-xl shadow-cyan-600">{email}</td>
+            <td className="p-5  text-base font-medium text-gray-900 whitespace-nowrap shadow-xl shadow-cyan-600">
                 {
                     user?.role === "admin" ?
                         <button className='btn bg-[#D1A054] hover:bg-[#D1A054]'> Admin</button>
@@ -52,12 +64,12 @@ const UserRow = ({ user, index, toggleAddUserModal, toggleEditUserModal }) => {
 
             </td>
 
-            <td className="p-4 space-x-2 whitespace-nowrap">
-                <button onClick={toggleEditUserModal} type="button" data-modal-toggle="edit-user-modal" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+            <td className="p-5  space-x-2 whitespace-nowrap shadow-xl shadow-cyan-600">
+                <button onClick={() => document.getElementById('my_modal_3').showModal()} type="button" data-modal-toggle="edit-user-modal" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                     <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" /><path fillRule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clipRule="evenodd" /></svg>
                     Edit user
                 </button>
-                <button type="button" data-modal-toggle="delete-user-modal" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900">
+                <button onClick={() => handleDeleteUser(user)} type="button" data-modal-toggle="delete-user-modal" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900">
                     <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" /></svg>
                     Delete user
                 </button>

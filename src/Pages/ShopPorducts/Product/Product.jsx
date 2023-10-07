@@ -31,27 +31,27 @@ const Product = ({ product, setSelectedProduct, setProductDetails }) => {
   };
 
   return (
-    <div>
-      <div class="overflow-hidden  bg-white rounded-lg shadow-lg shadow-indigo-500 dark:bg-[#292830] ">
-        <a href="#" class="relative block h-60 overflow-hidden">
+
+      <div className="overflow-hiddenbg-white rounded-lg shadow-lg shadow-indigo-500 dark:bg-[#292830] ">
+        <a href="#" className="relative block h-60 overflow-hidden">
           <img
-            class="object-cover w-full h-full transition-all hover:scale-110"
+            className="object-cover w-full h-full transition-all hover:scale-110"
             src={img}
             alt={name}
           />
         </a>
-        <div class="relative z-20 p-8 -mt-14 ">
-          <span class="inline-block px-4 py-2 mb-3 text-lg font-bold text-white bg-blue-500 rounded">
+        <div className="relative z-20 p-8 -mt-14 ">
+          <span className="inline-block px-4 py-2 mb-3 text-lg font-bold text-white bg-blue-500 rounded">
             <span className="text-xl font-extrabold mr-1">৳</span>
             {price}
           </span>
-          <h2 class="mb-2 text-xl font-bold text-black dark:text-white">
+          <h2 className="mb-2 text-xl font-bold text-black dark:text-white">
             {name}
           </h2>
-          <h2 class="mb-2 text-sm font-bold text-black dark:text-white">
-            {categories[0]}
+          <h2 className="mb-2 text-sm font-bold text-black dark:text-white">
+            {categories}
           </h2>
-          <div class="flex gap-1 pb-5 mb-5 text-orange-400 border-b border-gray-300 dark:border-gray-600">
+          <div className="flex gap-1 pb-5 mb-5 text-orange-400 border-b border-gray-300 dark:border-gray-600">
             {/* This is React Rating  */}
             <Rating
               readonly
@@ -92,8 +92,8 @@ const Product = ({ product, setSelectedProduct, setProductDetails }) => {
             />
             {rating}
           </div>
-          <div class="flex items-center justify-between">
-            <div class="flex">
+          <div className="flex items-center justify-between">
+            <div className="flex">
               <label
                 onClick={() => handleProductDetails(product)}
                 htmlFor="my_modal_6"
@@ -103,13 +103,13 @@ const Product = ({ product, setSelectedProduct, setProductDetails }) => {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  class="w-6 h-6 text-orange-600"
+                  className="w-6 h-6 text-orange-600"
                 >
                   <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   />
                 </svg>
               </label>
@@ -124,7 +124,6 @@ const Product = ({ product, setSelectedProduct, setProductDetails }) => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

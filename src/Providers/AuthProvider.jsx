@@ -16,9 +16,10 @@ export const AuthContext = createContext(null);
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState("Mehedi Hasan");
+  const [user, setUser] = useState("");
   const [loader, setLoader] = useState(true);
   const googleProvider = new GoogleAuthProvider();
+
   console.log("observer catch :", user);
 
   const createuser = async (email, password, name, photoURL) => {
@@ -47,9 +48,11 @@ const AuthProvider = ({ children }) => {
     }
   };
 
+  console.log("Loader State :-", loader);
+
   //LogIn 
   const logIn = (email, password) => {
-    // setLoader(true)
+    setLoader(true)
     return signInWithEmailAndPassword(auth, email, password)
   }
 
@@ -60,6 +63,7 @@ const AuthProvider = ({ children }) => {
 
   //sign in With googleProvider
   const googleSignIn = () => {
+    setLoader(true)
     return signInWithPopup(auth, googleProvider)
   }
 
@@ -72,7 +76,7 @@ const AuthProvider = ({ children }) => {
           const userInfo = {
             email: currentUser.email,
           }
-          const uri = 'http://localhost:3000/jwt'
+          const uri = 'https://foshol-bazar-server-site.vercel.app/jwt'
           const respone = await fetch(uri, {
             method: "POST",
             headers: {
@@ -88,11 +92,11 @@ const AuthProvider = ({ children }) => {
         } else {
           localStorage.removeItem('bazar-access-token')
           setUser(null);
-          setLoader(false)
+          // setLoader(false)
         }
 
       } catch (error) {
-
+        throw error
       }
 
     });
