@@ -37,9 +37,9 @@ const FeaturedProducts = () => {
   };
 
   return (
-    <div className="bg-[#1d1c22] w-full min-h-[70vh] flex items-center py-10">
+    <div  className="bg-[#1d1c22] w-full min-h-[70vh] flex items-center py-10">
       <div className="w-full max-w-screen-xl mx-auto">
-        <section className="w-full flex flex-col sm:flex-row items-center space-y-4 sm:justify-between">
+        <section  data-aos="fade-right" className="w-full flex flex-col sm:flex-row items-center space-y-4 sm:justify-between">
           <div>
             <h1 className="font-bold text-4xl text-white">Featured Products</h1>
           </div>
@@ -82,11 +82,11 @@ const FeaturedProducts = () => {
           onSwiper={setSwiper}
           onSlideChange={() => console.log("slide change")}
         >
-          <section className="flex items-center bg-gray-100 dark:bg-gray-800 lg:h-screen">
+          <section className="flex items-center bg-gray-100 dark:bg-gray-800 lg:h-screen ">
             <div className="p-4 mx-auto ">
               {products.slice(0, 6).map((product) => (
                 <SwiperSlide   key={product._id}>
-                  <div
+                  <div  data-aos="fade-right"
                     className="mt-56 w-full h-auto bg-white rounded shadow dark:bg-gray-700"
                   >
                     <div className="relative z-20 p-6 group">

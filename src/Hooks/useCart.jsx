@@ -13,6 +13,7 @@ const useCart = () => {
         queryFn: async () => {
             try {
                 const res = await axiosSecure.get(`/cart-items?email=${user?.email}`)
+                // console.log("---------Cart data is loaded-------------");
                 return res.data
             } catch (error) {
                 throw error

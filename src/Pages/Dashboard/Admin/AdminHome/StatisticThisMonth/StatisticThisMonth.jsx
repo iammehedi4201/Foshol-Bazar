@@ -21,9 +21,6 @@ const StatisticThisMonth = () => {
         }
     })
 
-    console.log("Top customar  :-", topCustomar_stats);
-
-
 
     return (
         <div className="p-4 bg-white border border-gray-200 rounded-lg shadow-sm shadow-cyan-900 dark:border-gray-700 sm:p-6 dark:bg-[#1d1c22] ">

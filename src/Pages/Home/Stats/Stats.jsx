@@ -7,8 +7,8 @@ const Stats = () => {
       <div className=" flex justify-center items-center max-w-screen-xl min-h-[50vh] mx-auto ">
         <section className="p-6 my-6 dark:bg-[#de2348] dark:text-gray-100">
           <div className="container grid grid-cols-1 gap-6 mx-auto sm:grid-cols-2 xl:grid-cols-4">
-            <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 dark:bg-gray-900 dark:text-gray-100 shadow-inner shadow-indigo-600">
-              <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 dark:bg-[#de2348]">
+            <div data-aos="fade-right"  className="flex p-4 space-x-4 rounded-lg md:space-x-6 dark:bg-gray-900 dark:text-gray-100 shadow-inner shadow-indigo-600">
+              <div  className="flex justify-center p-2 align-middle rounded-lg sm:p-4 dark:bg-[#de2348]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 512 512"
@@ -25,7 +25,7 @@ const Stats = () => {
                 <p className="capitalize">Orders</p>
               </div>
             </div>
-            <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 dark:bg-gray-900 dark:text-gray-100 shadow-inner shadow-indigo-600">
+            <div data-aos="fade-right"  className="flex p-4 space-x-4 rounded-lg md:space-x-6 dark:bg-gray-900 dark:text-gray-100 shadow-inner shadow-indigo-600">
               <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 dark:bg-[#de2348]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +44,7 @@ const Stats = () => {
                 <p className="capitalize">New customers</p>
               </div>
             </div>
-            <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 dark:bg-gray-900 dark:text-gray-100 shadow-inner shadow-indigo-600">
+            <div  data-aos="fade-right" className="flex p-4 space-x-4 rounded-lg md:space-x-6 dark:bg-gray-900 dark:text-gray-100 shadow-inner shadow-indigo-600">
               <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 dark:bg-[#de2348]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +65,7 @@ const Stats = () => {
                 <p className="capitalize">Growth</p>
               </div>
             </div>
-            <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 dark:bg-gray-900 dark:text-gray-100 shadow-inner shadow-indigo-600">
+            <div  data-aos="fade-right"  className="flex p-4 space-x-4 rounded-lg md:space-x-6 dark:bg-gray-900 dark:text-gray-100 shadow-inner shadow-indigo-600">
               <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 dark:bg-[#de2348]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

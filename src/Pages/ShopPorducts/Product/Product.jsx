@@ -32,7 +32,7 @@ const Product = ({ product, setSelectedProduct, setProductDetails }) => {
 
   return (
 
-      <div className="overflow-hiddenbg-white rounded-lg shadow-lg shadow-indigo-500 dark:bg-[#292830] ">
+      <div data-aos="zoom-in" className="overflow-hidden bg-white rounded-lg shadow-md shadow-indigo-500 dark:bg-[#292830] ">
         <a href="#" className="relative block h-60 overflow-hidden">
           <img
             className="object-cover w-full h-full transition-all hover:scale-110"

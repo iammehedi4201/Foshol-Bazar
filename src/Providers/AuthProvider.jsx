@@ -43,7 +43,6 @@ const AuthProvider = ({ children }) => {
 
       return userCredential;
     } catch (error) {
-      setLoader(false)
       throw error;
     }
   };
@@ -58,6 +57,7 @@ const AuthProvider = ({ children }) => {
 
   //logOut
   const logOut = () => {
+    // setLoader(true)
     return signOut(auth)
   }
 
@@ -72,11 +72,12 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       try {
         if (currentUser) {
+          console.log("onauthStateChange is called ");
           setUser(currentUser)
           const userInfo = {
             email: currentUser.email,
           }
-          const uri = 'https://foshol-bazar-server-site.vercel.app/jwt'
+          const uri = 'https://foshol-bazar.onrender.com/jwt'
           const respone = await fetch(uri, {
             method: "POST",
             headers: {

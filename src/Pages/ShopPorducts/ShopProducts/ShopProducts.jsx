@@ -1,15 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./ShopProduts.css";
 import Product from "../Product/Product";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useLocation } from "react-router-dom";
 import Rating from "react-rating";
 import { toast } from "react-hot-toast";
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import useCart from "../../../Hooks/useCart";
+import PageHeader from "../../../Shared/PageHeader/pageHeader";
 const ShopProducts = () => {
+  const location = useLocation()
+  console.log(location);
   const { user } = useContext(AuthContext);
-  const [, , cartRefetch]= useCart();
+  const [, , cartRefetch] = useCart();
   const [selectedProduct, setSelectedProduct] = useState({});
   const [productDetails, setProductDetails] = useState({});
   const [loadedProducts, setLoadedProducts] = useState([]);
@@ -25,7 +28,7 @@ const ShopProducts = () => {
   //load Product Count
   const [productsCount, setProductsCounnt] = useState('');
   const [currentPage, setCurrentPage] = useState(0); //current kon page achi
-  const [pageSize, setPageSize] = useState(6);
+  const [pageSize, setPageSize] = useState(12);
   const totalPages = Math.ceil(productsCount / pageSize);
 
   const handlePageChange = (page) => {
@@ -59,7 +62,7 @@ const ShopProducts = () => {
   //Todo----------Data Load Form Database---------------
   useEffect(() => {
     fetch(
-      `https://foshol-bazar-server-site.vercel.app/products?currentPage=${currentPage}&pageSize=${pageSize}&search=${searchValue}&category=${selectCategoryValue}`
+      `https://foshol-bazar.onrender.com/products?currentPage=${currentPage}&pageSize=${pageSize}&search=${searchValue}&category=${selectCategoryValue}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -103,7 +106,7 @@ const ShopProducts = () => {
       productQuantity: quntity,
     };
 
-    fetch("https://foshol-bazar-server-site.vercel.app/cart-items", {
+    fetch("https://foshol-bazar.onrender.com/cart-items", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -111,7 +114,7 @@ const ShopProducts = () => {
       body: JSON.stringify(orderInfo),
     })
       .then((res) => res.json())
-      .then((data) => { 
+      .then((data) => {
         if (data.upsertedCount > 0) {
           toast.success("Order Placed successfully");
           cartRefetch();
@@ -153,7 +156,7 @@ const ShopProducts = () => {
   return (
     <div>
       {/* --------page-Header--------- */}
-      <div className="bg-indigo-500 relative bg-img">
+      {/* <div className="bg-indigo-500 relative bg-img">
         <div className="flex items-center justify-center max-w-screen-xl min-h-[40vh] mx-auto">
           <section className="z-10 space-y-4">
             <h1 className="text-white font-bold text-4xl">
@@ -164,7 +167,12 @@ const ShopProducts = () => {
         </div>
         <div className="white-curve-after hidden sm:block"></div>
         <div className="section-back-text">Shop</div>
-      </div>
+      </div> */}
+      <PageHeader
+        sectionBackText={'Fresh Fruites Shop'}
+        bgColor={'indigo'}
+        route={location.pathname}
+      ></PageHeader>
 
       {/* ---------------------------------- */}
       <div className="bg-[#1d1c22] ">
@@ -274,13 +282,13 @@ const ShopProducts = () => {
           </section>
           <section className="mt-10">
             <section className="flex items-center ">
-              <div className="p-4 mx-auto max-w-7xl">
+              <div className="p-4 mx-auto w-full">
                 {/* filter section  */}
                 <section className="mb-5  ">
                   <form>
                     <div className="flex flex-col sm:flex-row sm:space-y-0 space-y-5 ">
-                      <select onChange={hanldeSelect} className="select select-info bg-black text-white w-full max-w-xs mr-5">
-                        <option value='' disabled selected>Select category</option>
+                      <select onChange={hanldeSelect} className="select select-info bg-black text-white w-full max-w-xs mr-5" defaultValue="">
+                        <option value="" disabled>Select category</option>
                         <option value="Vegetables">Vegetables</option>
                         <option value="Fruits">Fruits</option>
                         <option value="Spices">Spices</option>
@@ -292,7 +300,7 @@ const ShopProducts = () => {
                          dark:border-[#3abff8]  dark:placeholder-gray-400 dark:text-white dark:focus:border-[#3abff8]" placeholder="Search Mockups, Logos, Design Templates..." required />
                         <button type="submit" className="absolute top-0 right-0 p-2.5 text-sm font-medium h-full text-white bg-blue-700 rounded-r-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                           <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                           </svg>
                           <span className="sr-only">Search</span>
                         </button>
@@ -364,7 +372,7 @@ const ShopProducts = () => {
         <>
           <input type="checkbox" id="my_modal_7" className="modal-toggle" />
           <div className="modal  ">
-            <div className={`modal-box   shadow-lg shadow-green-400"`}>
+            <div className={`modal-box   shadow-md shadow-green-400"`}>
               <div className="">
                 <section className="text-gray-600 body-font overflow-hidden">
                   <div className="w-full  flex justify-between p-4  bg-gray-100">
@@ -398,9 +406,9 @@ const ShopProducts = () => {
                             stroke="currentColor"
                           >
                             <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
                               d="M20 12H4"
                             />
                           </svg>
@@ -420,9 +428,9 @@ const ShopProducts = () => {
                             stroke="currentColor"
                           >
                             <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
                               d="M12 4v16m8-8H4"
                             />
                           </svg>
@@ -430,16 +438,16 @@ const ShopProducts = () => {
                       </div>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row justify-between w-full mt-4">
-                      <div className="flex items-center text-gray-500">
-                        <div on className="modal-action">
-                          <label htmlFor="my_modal_7" className="btn btn-error">
+                    <div className="flex flex-col-reverse sm:flex-row justify-between w-full mt-4">
+                      <div className="flex justify-center  items-center text-gray-500">
+                        <div  className="modal-action">
+                          <label htmlFor="my_modal_7" className="btn btn-error w-40">
                             Close!
                           </label>
                         </div>
                       </div>
                       <div>
-                        <div className="flex items-center text-gray-500">
+                        <div className="flex justify-center items-center text-gray-500">
                           <div className="modal-action">
                             <button
                               onClick={handleAddToCart}
@@ -453,9 +461,9 @@ const ShopProducts = () => {
                                 stroke="currentColor"
                               >
                                 <path
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                  stroke-width="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth="2"
                                   d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                                 />
                               </svg>
@@ -476,7 +484,7 @@ const ShopProducts = () => {
       {/* ---------- Product Details modal ------------------------ */}
       <input type="checkbox" id="my_modal_6" className="modal-toggle" />
       <div className="modal ">
-        <div className="modal-box modal-box_For_Product_Details  shadow-lg shadow-green-400">
+        <div className="modal-box modal-box_For_Product_Details  shadow-inner shadow-green-400">
           <div className="">
             <section className="text-gray-600 body-font overflow-hidden">
               <div className="container px-5 py-24 mx-auto">
@@ -498,9 +506,9 @@ const ShopProducts = () => {
                         <svg
                           fill="currentColor"
                           stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
                           className="w-4 h-4 text-yellow-400"
                           viewBox="0 0 24 24"
                         >
@@ -509,9 +517,9 @@ const ShopProducts = () => {
                         <svg
                           fill="currentColor"
                           stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
                           className="w-4 h-4 text-yellow-400"
                           viewBox="0 0 24 24"
                         >
@@ -520,9 +528,9 @@ const ShopProducts = () => {
                         <svg
                           fill="currentColor"
                           stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
                           className="w-4 h-4 text-yellow-400"
                           viewBox="0 0 24 24"
                         >
@@ -531,9 +539,9 @@ const ShopProducts = () => {
                         <svg
                           fill="currentColor"
                           stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
                           className="w-4 h-4 text-yellow-400"
                           viewBox="0 0 24 24"
                         >
@@ -542,9 +550,9 @@ const ShopProducts = () => {
                         <svg
                           fill="none"
                           stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
                           className="w-4 h-4 text-yellow-400"
                           viewBox="0 0 24 24"
                         >
@@ -558,9 +566,9 @@ const ShopProducts = () => {
                         <a className="text-gray-500">
                           <svg
                             fill="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
                             className="w-5 h-5"
                             viewBox="0 0 24 24"
                           >
@@ -570,9 +578,9 @@ const ShopProducts = () => {
                         <a className="text-gray-500">
                           <svg
                             fill="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
                             className="w-5 h-5"
                             viewBox="0 0 24 24"
                           >
@@ -582,9 +590,9 @@ const ShopProducts = () => {
                         <a className="text-gray-500">
                           <svg
                             fill="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
                             className="w-5 h-5"
                             viewBox="0 0 24 24"
                           >
@@ -604,9 +612,9 @@ const ShopProducts = () => {
                       <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                         <svg
                           fill="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
                           className="w-5 h-5 text-rose-600 hover:text-red-900"
                           viewBox="0 0 24 24"
                         >

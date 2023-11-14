@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
 
 const axiosSecure = axios.create({
-    baseURL: 'https://foshol-bazar-server-site.vercel.app',
+    baseURL: 'https://foshol-bazar.onrender.com',
 });
 
 const useAxiosSecure = () => {

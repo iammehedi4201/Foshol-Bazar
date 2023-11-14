@@ -29,7 +29,7 @@ const CutomerReviews = () => {
               </div>
 
               <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 ">
-                <div className="py-6 bg-white rounded-md shadow dark:bg-gray-900">
+                <div  data-aos="fade-right" className="py-6 bg-white rounded-md shadow dark:bg-gray-900">
                   <div className="flex flex-wrap items-center justify-between pb-4 mb-6 space-x-2 border-b dark:border-gray-700">
                     <div className="flex items-center px-6 mb-2 md:mb-0 ">
                       <div className="flex mr-2 rounded-full">
@@ -161,7 +161,7 @@ const CutomerReviews = () => {
                     </div>
                   </div>
                 </div>
-                <div className="py-6 bg-white rounded-md shadow dark:bg-gray-900">
+                <div data-aos="fade-right" className="py-6 bg-white rounded-md shadow dark:bg-gray-900">
                   <div className="flex flex-wrap items-center justify-between pb-4 mb-6 space-x-2 border-b dark:border-gray-700">
                     <div className="flex items-center px-6 mb-2 md:mb-0 ">
                       <div className="flex mr-2 rounded-full">
@@ -293,7 +293,7 @@ const CutomerReviews = () => {
                     </div>
                   </div>
                 </div>
-                <div className="py-6 bg-white rounded-md shadow dark:bg-gray-900">
+                <div data-aos="fade-right" className="py-6 bg-white rounded-md shadow dark:bg-gray-900">
                   <div className="flex flex-wrap items-center justify-between pb-4 mb-6 space-x-2 border-b dark:border-gray-700">
                     <div className="flex items-center px-6 mb-2 md:mb-0 ">
                       <div className="flex mr-2 rounded-full">
@@ -425,7 +425,7 @@ const CutomerReviews = () => {
                     </div>
                   </div>
                 </div>
-                <div className="py-6 bg-white rounded-md shadow dark:bg-gray-900">
+                <div data-aos="fade-right" className="py-6 bg-white rounded-md shadow dark:bg-gray-900">
                   <div className="flex flex-wrap items-center justify-between pb-4 mb-6 space-x-2 border-b dark:border-gray-700">
                     <div className="flex items-center px-6 mb-2 md:mb-0 ">
                       <div className="flex mr-2 rounded-full">

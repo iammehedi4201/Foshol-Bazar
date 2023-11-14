@@ -9,7 +9,6 @@ import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
 
 const SignUp = () => {
   const { createuser, user, loader } = useContext(AuthContext);
-  console.log(loader);
   const navigate = useNavigate()
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -96,7 +95,7 @@ const SignUp = () => {
         //inserting UsersInfo 
         const userInfo = { name, email, photoUrl }
         //if no response is return it will not go to further .
-        const response = await axios.post(' http://localhost:3000/users',userInfo)
+        const response = await axios.post(' https://foshol-bazar.onrender.com/users', userInfo)
         Swal.fire({
           title: "Success!",
           text: "User Created Successfully. Check your email for verification link.",
@@ -148,7 +147,7 @@ const SignUp = () => {
       <section className="bg-[#1d1c22]">
         <div className="flex items-center justify-center max-w-screen-xl min-h-screen mx-auto p-5">
           <div className="w-full">
-            <div className="bg-gray-100 text-gray-500 shadow-xl shadow-purple-500 w-full overflow-hidden">
+            <div className="bg-gray-100 text-gray-500 shadow-md shadow-purple-500 w-full overflow-hidden">
               <div className="md:flex w-full">
                 <div className="hidden md:block w-1/2 bg-[#1d1c22] py-10 px-10 ">
                   <svg
@@ -432,7 +431,7 @@ const SignUp = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="flex -mx-3">
+                      <div className="flex flex-col sm:flex-row -mx-3">
                         <div className="w-full sm:1/2 px-3 mb-12">
                           <label
                             htmlFor=""

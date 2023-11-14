@@ -26,64 +26,60 @@ const Carasoul = () => {
       >
         3
       </a>
-      <a
-        href="#item4"
-        className="btn shadow-2xl sm:w-20  btn-success hover:bg-green-400"
-      >
-        4
-      </a>
     </div>
   );
 
   return (
     <div className="carousel w-full ">
-      <div
-        id="item1"
-        className="carousel-item w-full bg-[#98c869] relative  carasoul-style "
-      >
-        <div className="max-w-screen-xl sm:flex flex-row-reverse justify-center items-center sm:mx-auto p-5 relative  shadow-lg shadow-red-800 m-5">
-          <div className="sm:w-1/2 w-full">
-            <img src={imgOne} className="sm:w-3/4 w-full mx-auto" />
+      {/* carasoul item-1 */}
+      <div id="item1" className="carousel-item w-full bg-[#ff736a] relative carasoul-style">
+        <div className="max-w-screen-xl sm:min-h-screen sm:flex flex-row-reverse justify-center items-center mx-auto p-5 relative space-y-10 sm:space-y-0 ">
+          <div className="sm:w-1/2 w-full relative">
+            <img className=" sm:block w-54 h-56 sm:h-96 absolute bottom-0 -left-0 sm:-left-12 top-0 sm:top-[20%] rotate-180" src="https://amigos-themes.com/frutella/frutella-black/assets/images/content/x/strawberry-branch.png" alt="" />
+            <img src={imgFour} className="sm:w-3/5 w-3/6 mx-auto" />
+            <img className="w-54 h-56 sm:h-96 absolute bottom-0 -right-0 -top-0 sm:top-[30%]" src="https://amigos-themes.com/frutella/frutella-black/assets/images/content/x/strawberry-branch.png" alt="" />
+            <img className=" w-20 h-20 absolute bottom-0 right-20 sm:right-52 -top-20" src="https://amigos-themes.com/frutella/frutella-black/assets/images/content/x/shpinat-2.png" alt="" />
           </div>
-          <div className="space-y-3 w-full sm:w-1/2  sm:p-20">
-            <h1 className="font-bold text-white">
-              Banana
-              <span className="text-[#ff736a] font-bold"> Every Day </span>
+          <div className="space-y-5 w-full sm:w-1/2 sm:p-10 ">
+            <h1 className="font-bold text-white text-5xl sm:text-6xl">
+              Healthy Food
+              <span className="text-[#98c869] font-bold"> Delivery</span>
             </h1>
-            <h3 className="text-white text-lg font-medium">
+            <h3 className="text-white text-lg font-medium italic capitalize">
               Product crafted with care
             </h3>
-            <p className="text-white text-sm">
-              Bred for a high content of beneficial substances. Our products
-              are all fresh and healthy.
+            <p className="text-white text-sm leading-6">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae fugit debitis reprehenderit rem veniam numquam, incidunt facilis facere, laborum voluptate iusto sunt quisquam obcaecati, animi similique ad officiis praesentium dolor!
             </p>
-            <button className="btn btn-outline btn-wide">Shop</button>
+            <button className="btn btn-neutral btn-wide">Shop</button>
           </div>
+
         </div>
         <div className="section-back-text">Fresh</div>
         {carasoulButton}
       </div>
+
       {/* carasoul item-2 */}
-      <div id="item2" className="carousel-item w-full  bg-[#ffb524] relative carasoul-style"
+      <div id="item2" className="carousel-item w-full  bg-[#dfc13f] relative carasoul-style"
       >
-        <div className="max-w-screen-xl sm:flex flex-row-reverse justify-center items-center sm:mx-auto p-5 relative shadow-lg shadow-red-800 m-5 ">
-          <div className="sm:w-1/2 w-full">
-            <img src={imgTwo} className="sm:w-3/4 w-full mx-auto" />
+        <div className="max-w-screen-xl sm:flex flex-row-reverse justify-center items-center sm:mx-auto p-5 relative space-y-5 sm:space-y-0 ">
+          <div className="sm:w-1/2 w-full relative">
+            <img className="w-16 h-16 absolute  left-0 -top-16 sm:top-0" src="https://amigos-themes.com/frutella/frutella-black/assets/images/content/x/bilberry.png" alt="" />
+            <img src={imgTwo} className=" w-full mx-auto" />
           </div>
-          <div className="space-y-3 w-full sm:w-1/2 sm:p-20">
-            <h1 className="font-bold text-white text-4xl">
+          <div className="space-y-5 w-full sm:w-1/2 sm:p-10">
+            <h1 className="font-bold text-white text-5xl sm:text-6xl">
               Save on all Products
               <br />
               <span className="text-red-500 font-bold "> 45% OFF </span>
             </h1>
-            <h3 className="text-white text-lg font-medium">
+            <h3 className="text-white text-lg font-medium italic capitalize">
               Product crafted with care
             </h3>
-            <p className="text-white text-sm">
-              Bred for a high content of beneficial substances. Our products
-              are all fresh and healthy.
+            <p className="text-white text-sm leading-6">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate atque quas eum eveniet maiores temporibus quidem facere, facilis minima ipsam, perferendis natus rem laudantium modi autem itaque pariatur saepe blanditiis!
             </p>
-            <button className="btn btn-outline btn-wide">Shop</button>
+            <button className="btn btn-neutral btn-wide">Shop</button>
           </div>
 
         </div>
@@ -92,50 +88,24 @@ const Carasoul = () => {
       </div>
       {/* carasoul item-3 */}
       <div id="item3" className="carousel-item w-full bg-[#ff6a8e] relative carasoul-style" >
-        <div className="max-w-screen-xl sm:flex flex-row-reverse justify-center items-center sm:mx-auto p-5 relative shadow-lg shadow-red-800 m-5">
-          <div className="sm:w-1/2 w-full">
-            <img src={imgThree} className="sm:w-3/4 w-full mx-auto " />
+        <div className="max-w-screen-xl sm:flex flex-row-reverse justify-center items-center sm:mx-auto p-5 relative m-5 space-y-5 sm:space-y-0">
+          <div className="sm:w-1/2 w-full relative">
+            <img src={imgThree} className="sm:w-4/4 w-full mx-auto " />
           </div>
-          <div className="space-y-3 w-full sm:w-1/2 sm:p-20">
-            <h1 className="font-bold text-white">
+          <div className="space-y-5 w-full sm:w-1/2 sm:p-10">
+            <h1 className="font-bold text-white text-5xl sm:text-6xl">
               Organic Food
               <span className="text-[#ffb524] font-bold"> Every Day </span>
             </h1>
-            <h3 className="text-white text-lg font-medium">
+            <h3 className="text-white text-lg font-medium italic capitalize">
               Product crafted with care
             </h3>
-            <p className="text-white text-sm">
-              Bred for a high content of beneficial substances. Our products
-              are all fresh and healthy.
+            <p className="text-white text-md leading-6">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam itaque soluta facere quo. Perferendis ex explicabo aut libero nobis enim atque veniam molestias ab ad aspernatur voluptas, quos cum labore!
             </p>
-            <button className="btn btn-outline btn-wide">Shop</button>
+            <button className="btn btn-neutral btn-wide">Shop</button>
           </div>
         </div>
-        {carasoulButton}
-      </div>
-      {/* carasoul item-4 */}
-      <div id="item4" className="carousel-item w-full bg-[#ff736a] relative carasoul-style">
-        <div className="max-w-screen-xl sm:min-h-screen sm:flex flex-row-reverse justify-center items-center mx-auto p-5 relative shadow-lg shadow-red-800 m-5">
-          <div className="sm:w-1/2 w-full">
-            <img src={imgFour} className="sm:w-3/5 w-3/6 mx-auto" />
-          </div>
-          <div className="space-y-3 w-full sm:w-1/2 sm:p-20">
-            <h1 className="font-bold text-white">
-              Healthy Food
-              <span className="text-[#98c869] font-bold"> Delivery</span>
-            </h1>
-            <h3 className="text-white text-lg font-medium">
-              Product crafted with care
-            </h3>
-            <p className="text-white text-sm">
-              Bred for a high content of beneficial substances. Our products
-              are all fresh and healthy.
-            </p>
-            <button className="btn btn-outline btn-wide">Shop</button>
-          </div>
-
-        </div>
-        <div className="section-back-text">Fresh</div>
         {carasoulButton}
       </div>
     </div>

@@ -7,14 +7,14 @@ const Diccount = () => {
     <div className="bg-backound">
       <div className="flex items-center  max-w-screen-xl min-h-[60vh] mx-auto p-10">
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8">
-          <section className="rounded-lg bg-gray-100">
-            <img
+          <section  className="rounded-lg bg-gray-100">
+            <img data-aos="fade-left"
               className="z-10 relative w-1/2 h-38 mx-auto"
               src={logo}
               alt=""
             />
           </section>
-          <section className="z-10 relative space-y-3">
+          <section data-aos="fade-right" className="z-10 relative space-y-3">
             <h3 className="text-orange-500 text-3xl font-bold ">
               Black Friday
             </h3>

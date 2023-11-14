@@ -27,6 +27,8 @@ import OrderHistory from "../Pages/Dashboard/User/OrderHistory/OrderHistory/Orde
 import ManageItems from "../Pages/Dashboard/Admin/ManageItems/ManageItems/ManageItems";
 import ManageOrders from "../Pages/Dashboard/Admin/ManageOrders/ManageOrders/ManageOrders";
 import Exp from "../Pages/Expriments/Exp";
+import Coupons from "../Pages/Dashboard/Admin/Coupons/Coupons/Coupons";
+import CandidateForCoupons from "../Pages/Dashboard/Admin/Coupons/BestCandidateForCoupons/BestCandidateForCoupons/CandidateForCoupons";
 
 
 export const router = createBrowserRouter([
@@ -41,7 +43,7 @@ export const router = createBrowserRouter([
       {
         path: "products",
         element: <ShopProducts></ShopProducts>,
-        // loader: () => fetch("https://foshol-bazar-server-site.vercel.app/products"),
+        // loader: () => fetch("https://foshol-bazar.onrender.com/products"),
       },
       {
         path: "checkout",
@@ -132,13 +134,19 @@ export const router = createBrowserRouter([
       {
         path: "manageitems",
         element: <AdminRoute><ManageItems></ManageItems></AdminRoute>
-      }
-      ,
+      },
       {
         path: "manageorders",
         element: <AdminRoute><ManageOrders></ManageOrders></AdminRoute>
+      },
+      {
+        path: "manageCoupons",
+        element: <AdminRoute><Coupons></Coupons></AdminRoute>
+      },
+      {
+        path: "couponsCandidates",
+        element: <AdminRoute><CandidateForCoupons></CandidateForCoupons></AdminRoute>
       }
-
     ]
   }
 ]);

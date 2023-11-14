@@ -4,10 +4,10 @@ const Newsletter = () => {
   return (
     <div className="bg-[#111827]">
       <div className=" max-w-screen-xl min-h-[100vh] mx-auto sm:p-10">
-        <section className="flex items-center ju min-h-screen bg-gray-100 font-poppins dark:bg-[#111827] ">
+        <section data-aos="fade-right" className="flex items-center ju min-h-screen bg-gray-100 font-poppins dark:bg-[#111827] ">
           <div className="justify-center flex-1 mx-auto max-w-7xl ">
             <div
-              className="relative px-4 py-4 mx-4 bg-white bg-bottom bg-no-repeat bg-cover rounded-md  md:p-10 dark:bg-gray-900 shadow-indigo-600 shadow-lg"
+              className="relative px-4 py-4 mx-4 bg-white bg-bottom bg-no-repeat bg-cover rounded-md  md:p-10 dark:bg-gray-900 shadow-indigo-600 shadow-inner"
               style={{
                 minHeight: "580px",
                 backgroundImage: "url('https://i.postimg.cc/MG2RXhTt/bg.png')",

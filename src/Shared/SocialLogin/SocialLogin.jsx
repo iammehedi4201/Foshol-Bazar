@@ -12,7 +12,7 @@ const SocialLogin = () => {
         try {
             const loggedUser = await googleSignIn();
             const userInfo = { name: loggedUser?.user?.displayName, email: loggedUser?.user?.email, photoURL: loggedUser?.user?.photoURL }
-            const response = await axios.post("https://foshol-bazar-server-site.vercel.app/users", userInfo)
+            const response = await axios.post("https://foshol-bazar.onrender.com/users", userInfo)
             navigate(from, { replace: true });
         } catch (error) {
             throw error

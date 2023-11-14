@@ -9,6 +9,7 @@ import useCart from "../../Hooks/useCart";
 
 const Navbar = () => {
   const [isAdmin, isAdminLoading] = useAdmin()
+  console.log("Navbar is render");
   const [loadedCartItems] = useCart();
   const { user, logOut, loader } = useContext(AuthContext)
   const [isMenuOpen, setIsMenuOpen] = useState(false);  //for navbar menu toogle
@@ -26,7 +27,7 @@ const Navbar = () => {
   };
   return (
     <div>
-      <nav className="bg-[#2f2d2d] border-gray-200 ">
+      <nav className="bg-[#2f2d2d] border-gray-200  fixed z-30 w-full">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <div className="h-20 flex items-end justify-center ">
             <img className="w-full h-16" src={logo} alt="" />
@@ -245,7 +246,7 @@ const Navbar = () => {
                   to="/products"
                   className="block py-2 pl-3 pr-4 text-white rounded  md:p-0   hover:text-orange-500 "
                 >
-                  Our Products
+                  Shop Now
                 </Link>
               </li>
 

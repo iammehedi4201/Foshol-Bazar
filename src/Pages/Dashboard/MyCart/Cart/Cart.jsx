@@ -4,47 +4,47 @@ import { Link, useNavigate } from "react-router-dom";
 import CartRow from "../CartRow/CartRow";
 import { AuthContext } from "../../../../Providers/AuthProvider";
 import useCart from "../../../../Hooks/useCart";
+import addtocartImg from '../../../../assets/addToCart.png';
+import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 
 const Cart = () => {
+    const [axiosSecure] = useAxiosSecure();
     const { user } = useContext(AuthContext);
     // console.log(user.email);
     const [loadedCartItems, isCartLoading, cartRefetch] = useCart();
     const [totalPrice, setTotalPrice] = useState("");
     const [selectedCartItemInfo, setSelectedCartItemInfo] = useState({});
+    const [coupon, setCoupon] = useState("")
     const navigate = useNavigate()
-
-    //loading Cart items
-    // useEffect(() => {
-    //   fetch(`https://foshol-bazar-server-site.vercel.app/cart-items?email=${user?.email}`,{
-    //          method:"GET",
-    //          headers:{
-    //              authorization :`Bearer ${localStorage.getItem("bazar-access-token")}`
-    //          }
-    //   })
-    //     .then((res) => res.json())
-    //     .then((data) => {
-    //       if (!data.error) {
-    //         setLoadedCartItems(data);
-    //       }
-    //       else
-    //       {
-    //         navigate("/products")
-    //       }
-
-    //     })
-    //     .catch((error) => console.error(error));
-    // }, [user.email]);
+    //After apply coupon the total Price 
+    const [totalAmount, setTotalAmount] = useState(0)
 
     //total Calculation
     let sumOfTotal = 0;
     let shippingCharge = 50;
     for (const order of loadedCartItems) {
         sumOfTotal = sumOfTotal + order.productPrice * order.productQuantity;
+    }   
+
+
+    //handle Apply Coupon 
+    const handleApplyCoupon = async () => {
+        const couponNumber = parseInt(coupon.slice(6));
+        const response = await axiosSecure.get(`/coupons?coupon=${coupon}`)
+            .then(response => {
+                if (response.data === 'Expiry date not over') {
+                    const couponNumber = parseInt(coupon.slice(6));
+                    setTotalAmount(sumOfTotal - couponNumber)
+                }
+                else {
+                    toast.error(`Coupon ${response.data}`)
+                }
+            })
     }
 
     //handle Delete Order
     const handleDeleteCartItem = (id) => {
-        fetch(`https://foshol-bazar-server-site.vercel.app/cart-items/${id}`, {
+        fetch(`https://foshol-bazar.onrender.com/cart-items/${id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())
@@ -66,7 +66,7 @@ const Cart = () => {
         const updatedCartItemQuantity = {
             productQuantity,
         };
-        fetch(`https://foshol-bazar-server-site.vercel.app/cart-items/${selectedCartItemInfo._id}`, {
+        fetch(`https://foshol-bazar.onrender.com/cart-items/${selectedCartItemInfo._id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",
@@ -92,6 +92,7 @@ const Cart = () => {
 
     // loading state :
     if (isCartLoading) {
+        console.log("----------Is cart is loading -------");
         return <div className=" w-full min-h-screen flex items-center justify-center">
             <span className="loading loading-infinity loading-lg text-white"></span>
         </div>
@@ -119,18 +120,28 @@ const Cart = () => {
                                 <h2 className="mb-10 text-4xl font-bold text-center dark:text-cyan-500">
                                     Your Cart
                                 </h2>
-                                <div className="flex flex-wrap">
+                                <div className="flex flex-wrap ">
                                     <div className="w-full lg:w-8/12 shadow-inner shadow-cyan-500">
-                                        <div className="px-10">
-                                            {loadedCartItems.map((order) => (
-                                                <CartRow
-                                                    key={order._id}
-                                                    order={order}
-                                                    handleDeleteCartItem={handleDeleteCartItem}
-                                                    handleUpdateCartItemInfo={handleUpdateCartItemInfo}
-                                                ></CartRow>
-                                            ))}
-                                        </div>
+                                        {
+                                            loadedCartItems.length == 0
+                                                ?
+                                                <div className="px-10">
+                                                    <img className="object-cover sm:max-w-lg mx-auto w-full" src={addtocartImg} alt="" />
+                                                    <h1 className="text-[#f97316] text-3xl font-bold text-center py-10 capitalize">Your Shopping bag is empty <br /> Start Shopping </h1>
+                                                </div>
+                                                :
+                                                <div className="px-10">
+                                                    {loadedCartItems.map((order) => (
+                                                        <CartRow
+                                                            key={order._id}
+                                                            order={order}
+                                                            handleDeleteCartItem={handleDeleteCartItem}
+                                                            handleUpdateCartItemInfo={handleUpdateCartItemInfo}
+                                                        ></CartRow>
+                                                    ))}
+                                                </div>
+                                        }
+
                                     </div>
                                     <div className="w-full lg:w-4/12 shadow-md shadow-cyan-500">
                                         <div className="px-6 mb-14">
@@ -140,16 +151,17 @@ const Cart = () => {
                                                 </span>
                                                 <input
                                                     type="text"
+                                                    onBlur={(e) => setCoupon(e.target.value)}
                                                     className="flex-1 w-full px-8 py-4 mt-4 font-normal placeholder-gray-400 border dark:bg-gray-800 rounded-xl dark:border-gray-700 dark:placeholder-gray-500 md:flex-none md:mr-6 dark:text-gray-400"
                                                     placeholder="x304k45"
                                                     required=""
                                                 />
-                                                <a
+                                                <button
+                                                    onClick={handleApplyCoupon}
                                                     className="inline-block w-full px-6 py-4 mt-4 text-lg font-medium leading-6 tracking-tighter text-center text-white bg-orange-500 lg:w-auto  focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-xl"
-                                                    href="#"
                                                 >
                                                     Apply
-                                                </a>
+                                                </button>
                                             </div>
                                             <div>
                                                 <h2 className="mb-6 text-3xl font-bold text-cyan-600">
@@ -161,7 +173,7 @@ const Cart = () => {
                                                         <span className="text-xl font-extrabold mr-1">
                                                             ৳
                                                         </span>
-                                                        <span>{sumOfTotal}</span>
+                                                        <span>{totalAmount == 0 ? sumOfTotal : totalAmount}</span>
                                                     </span>
                                                 </div>
                                                 <div className="flex items-center justify-between px-10 py-4 mb-3 font-medium leading-8 bg-gray-100 bg-opacity-50 border dark:text-gray-400 dark:bg-gray-800 dark:border-gray-800 rounded-xl">
@@ -179,11 +191,12 @@ const Cart = () => {
                                                         <span className="text-xl font-extrabold mr-1">
                                                             ৳
                                                         </span>
-                                                        <span>{sumOfTotal + shippingCharge}</span>
+                                                        <span>{totalAmount == 0 ? sumOfTotal + shippingCharge : totalAmount + shippingCharge}</span>
                                                     </span>
                                                 </div>
                                                 <Link
                                                     to='/checkout'
+                                                    state={totalAmount == 0 ? sumOfTotal + shippingCharge : totalAmount + shippingCharge}
                                                     className="inline-block w-full px-6 py-4 text-lg font-medium leading-6 tracking-tighter text-center text-white bg-orange-500 lg:w-auto focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-xl"
                                                     href="#"
                                                 >
@@ -201,7 +214,7 @@ const Cart = () => {
             {/* update form  */}
             <input type="checkbox" id="my_modal_8" className="modal-toggle" />
             <div className="modal ">
-                <div className="modal-box modal-box_For_Product_Details  shadow-lg shadow-[#023d47]">
+                <div className="modal-box modal-box_For_Product_Details  shadow-md shadow-[#023d47]">
                     <div className="">
                         <section className="bg-[#1d1c22]">
                             <div className="flex items-center justify-center max-w-screen-sm  mx-auto p-5">

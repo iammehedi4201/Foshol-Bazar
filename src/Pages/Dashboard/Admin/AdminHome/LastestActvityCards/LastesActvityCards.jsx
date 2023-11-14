@@ -4,7 +4,7 @@ const LastesActvityCards = () => {
     return (
         <div className="grid grid-cols-1 my-4 xl:grid-cols-2 xl:gap-4">
             {/* Activity Card */}
-            <div className="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-xl shadow-cyan-900 dark:border-gray-700 sm:p-6 dark:bg-[#1d1c22] xl:mb-0">
+            <div className="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-md shadow-cyan-900 dark:border-gray-700 sm:p-6 dark:bg-[#1d1c22] xl:mb-0">
                 <div className="flex items-center justify-between mb-4">
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Latest Activity</h3>
                     <a href="#" className="inline-flex items-center p-2 text-sm font-medium rounded-lg text-primary-700 hover:bg-gray-100 dark:text-primary-500 dark:hover:bg-gray-700">
@@ -40,7 +40,7 @@ const LastesActvityCards = () => {
                 </ol>
             </div>
             {/*Carousel widget */}
-            <div className="p-4 bg-white border border-gray-200 rounded-lg shadow-xl shadow-cyan-900  dark:border-gray-700 sm:p-6 dark:bg-[#1d1c22]">
+            <div className="p-4 bg-white border border-gray-200 rounded-lg shadow-md shadow-cyan-900  dark:border-gray-700 sm:p-6 dark:bg-[#1d1c22]">
                 <div id="carousel" className="relative" data-carousel>
                     <div className="relative mx-auto overflow-hidden h-[36rem] lg:h-[24rem]">
                         <div className="duration-700 ease-in-out bg-white dark:bg-[#1d1c22] absolute inset-0 transition-transform transform translate-x-0 z-20" data-carousel-item>

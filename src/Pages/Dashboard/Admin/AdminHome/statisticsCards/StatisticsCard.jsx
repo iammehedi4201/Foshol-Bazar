@@ -15,7 +15,7 @@ const StatisticsCard = () => {
     return (
         <section>
             <div className="grid w-full grid-cols-1 gap-4 mt-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2">
-                <div className="items-center justify-between p-4 bg-white border border-gray-200 rounded-lg  sm:flex dark:border-gray-700 sm:p-6 dark:bg-[#1d1c22] shadow-xl shadow-cyan-900 hover:shadow-2xl ">
+                <div className="items-center justify-between p-4 bg-white border border-gray-200 rounded-lg  sm:flex dark:border-gray-700 sm:p-6 dark:bg-[#1d1c22] shadow-md shadow-cyan-900 hover:shadow-2xl ">
                     <div className='mx-7'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
                             <g clip-path="url(#clip0_4_196)">
@@ -129,7 +129,7 @@ const StatisticsCard = () => {
                         </div>
                     </div>
                 </div>
-                <div className="items-center justify-between p-4 bg-white border border-gray-200 rounded-lg  sm:flex dark:border-gray-700 sm:p-6 dark:bg-[#1d1c22] shadow-xl shadow-cyan-900 hover:shadow-2xl">
+                <div className="items-center justify-between p-4 bg-white border border-gray-200 rounded-lg  sm:flex dark:border-gray-700 sm:p-6 dark:bg-[#1d1c22] shadow-md shadow-cyan-900 hover:shadow-2xl">
                     <div className='mx-7'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="51" viewBox="0 0 50 51" fill="none">
                             <g clip-path="url(#clip0_4_255)">
@@ -247,7 +247,7 @@ const StatisticsCard = () => {
                         </div>
                     </div>
                 </div>
-                <div className="items-center justify-between p-4 bg-white border border-gray-200 rounded-lg  sm:flex dark:border-gray-700 sm:p-6 dark:bg-[#1d1c22] shadow-xl shadow-cyan-900 hover:shadow-2xl">
+                <div className="items-center justify-between p-4 bg-white border border-gray-200 rounded-lg  sm:flex dark:border-gray-700 sm:p-6 dark:bg-[#1d1c22] shadow-md shadow-cyan-900 hover:shadow-2xl">
                     <div className='mx-7'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
                             <path d="M16.0992 34.779L12.9905 35.37C10.054 35.9284 7.84856 38.0415 7.36418 40.7573L5.79319 48.234C5.70236 48.6658 5.81125 49.1156 6.08938 49.4583C6.3675 49.801 6.78528 50 7.22658 50H17.1874V42.3817C17.1874 41.8596 17.4654 41.3769 17.917 41.1147L22.6646 38.3596C20.1099 37.868 17.8327 36.5864 16.0992 34.779Z" fill="white" />
@@ -357,7 +357,7 @@ const StatisticsCard = () => {
                         </div>
                     </div>
                 </div>
-                <div className="items-center justify-between p-4 bg-white border border-gray-200 rounded-lg  sm:flex dark:border-gray-700 sm:p-6 dark:bg-[#1d1c22] shadow-xl shadow-cyan-900 hover:shadow-2xl">
+                <div className="items-center justify-between p-4 bg-white border border-gray-200 rounded-lg  sm:flex dark:border-gray-700 sm:p-6 dark:bg-[#1d1c22] shadow-md shadow-cyan-900 hover:shadow-2xl">
                     <div className='mx-7'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
                             <g clip-path="url(#clip0_4_319)">

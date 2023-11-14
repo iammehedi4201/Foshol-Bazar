@@ -44,16 +44,16 @@ const ManageItemRow = ({ product, setSelectedProduct, productsRefetch }) => {
             <td className="w-full sm:w-32 p-4 ">
                 <img className='w-full' src={img} alt={name} />
             </td>
-            <td className="px-6 py-4 font-bold text-gray-100 shadow-xl shadow-cyan-600 text-center ">
+            <td className="px-6 py-4 font-bold text-gray-100 shadow-md shadow-cyan-600 text-center ">
                 {name}
             </td>
-            <td className="px-6 py-4 font-bold text-gray-100 shadow-xl shadow-cyan-600 text-center ">
+            <td className="px-6 py-4 font-bold text-gray-100 shadow-md shadow-cyan-600 text-center ">
                 {categories}
             </td>
-            <td className="px-6 py-4 font-bold text-gray-100 shadow-xl shadow-cyan-600 text-center ">
+            <td className="px-6 py-4 font-bold text-gray-100 shadow-md shadow-cyan-600 text-center ">
                 {price}
             </td>
-            <td className="px-6 py-4 font-bold  text-gray-100 shadow-xl shadow-cyan-600 text-center ">
+            <td className="px-6 py-4 font-bold  text-gray-100 shadow-md shadow-cyan-600 text-center ">
                 {rating}
             </td>
             <td className="px-6 py-4 flex sm:flex-row flex-wrap  justify-center sm:justify-normal ">

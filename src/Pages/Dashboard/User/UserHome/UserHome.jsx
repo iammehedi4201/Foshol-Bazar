@@ -13,7 +13,7 @@ const UserHome = () => {
             </Helmet>
             <h1 className='text-4xl italic text-white text-center mb-16 pt-10 w-full underline underline-offset-2 font-semibold'>Hi, Welcome Back!</h1>
             <div className='grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8'>
-                <section className="section about-section bg-[#1d1c22] w-full lg:col-span-2 shadow-xl shadow-cyan-700" id="about w-full">
+                <section className="section about-section bg-[#1d1c22] w-full lg:col-span-2 shadow-md shadow-cyan-700" id="about w-full">
                     <div className="container mx-auto px-4">
                         <div className="  lg:flex lg:flex-row items-center justify-between">
                             <div className="w-full lg:w-6/12 ">
@@ -69,7 +69,7 @@ const UserHome = () => {
                     </div>
                 </section>
 
-                <section className='p-5 space-y-5 flex flex-col justify-evenly bg-[#1d1c22] shadow-xl shadow-cyan-800'>
+                <section className='p-5 space-y-5 flex flex-col justify-evenly bg-[#1d1c22] shadow-md shadow-cyan-800'>
                     <h1 className='text-white text-4xl text-center font-bold italic'>Your Activities</h1>
                     <article
                         className="flex items-end justify-between rounded-lg border border-gray-100 bg-white p-6"

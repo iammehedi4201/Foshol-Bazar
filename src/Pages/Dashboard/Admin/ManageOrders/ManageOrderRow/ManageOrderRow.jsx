@@ -36,19 +36,19 @@ const ManageOrderRow = ({ order, orderRefetch }) => {
 
     return (
         <tr className="bg-black border-4 border-slate-800 hover:bg-slate-800 ">
-            <td className="px-6 py-4 font-bold text-gray-100 shadow-xl shadow-cyan-600 text-center ">
+            <td className="px-6 py-4 font-bold text-gray-100 shadow-md shadow-cyan-600 text-center ">
                 {customerEmail}
             </td>
-            <td className="px-6 py-4 font-bold text-gray-100 shadow-xl shadow-cyan-600 text-center ">
+            <td className="px-6 py-4 font-bold text-gray-100 shadow-md shadow-cyan-600 text-center ">
                 {phoneNumber}
             </td>
-            <td className="px-6 py-4 font-bold text-gray-100 shadow-xl shadow-cyan-600 text-center ">
+            <td className="px-6 py-4 font-bold text-gray-100 shadow-md shadow-cyan-600 text-center ">
                 {shippingAddress?.address}
             </td>
-            <td className="px-6 py-4 font-bold  text-gray-100 shadow-xl shadow-cyan-600 text-center ">
+            <td className="px-6 py-4 font-bold  text-gray-100 shadow-md shadow-cyan-600 text-center ">
                 {date}
             </td>
-            <td className="px-6 py-4  font-bold  text-gray-100 shadow-xl shadow-cyan-600 text-center">
+            <td className="px-6 py-4  font-bold  text-gray-100 shadow-md shadow-cyan-600 text-center">
                 {status}
             </td>
             <td className="px-6 py-4 flex flex-col sm:flex-row flex-wrap  justify-center sm:justify-center items-center gap-2">
@@ -61,7 +61,7 @@ const ManageOrderRow = ({ order, orderRefetch }) => {
                 </Link>
                 <Link onClick={() => handleUpdateStatus(_id)} className="btn font-medium text-white bg-[#80E2B7] hover:bg-[#4ca47e]">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M20 6L9 17L4 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                 </Link >
             </td>

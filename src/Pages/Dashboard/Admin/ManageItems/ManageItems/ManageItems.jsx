@@ -60,7 +60,7 @@ const ManageItems = () => {
                 sectionBackText={'Manage Items'}
                 bgColor={"cyan"}
             ></PageHeader>
-            <section className='w-full p-4 sm:p-8 lg:p-8 shadow-xl shadow-cyan-900'>
+            <section className='w-full p-4 sm:p-8 lg:p-8 shadow-md shadow-cyan-900'>
                 <div className="relative overflow-x-auto shadow-md sm:rounded-lg ">
                     <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 ">
                         {/* Table headers go here */}
@@ -117,8 +117,8 @@ const ManageItems = () => {
             </section>
             {/* Edit User Modal */}
             <input type="checkbox" id="my_modal_58" className="modal-toggle" />
-            <div className="modal ">
-                <div className="modal-box Edit-modal-box relative shadow-xl shadow-cyan-800">
+            <div className="modal">
+                <div className="modal-box Edit-modal-box relative shadow-md shadow-cyan-800">
                     {/* if there is a button in form, it will close the modal */}
                     {/* Modal content */}
                     <div className="relative  bg-[#1d1c22] rounded-lg shadow ">

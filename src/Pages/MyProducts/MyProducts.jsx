@@ -19,7 +19,7 @@ const MyProducts = () => {
       <section className="bg-[#1d1c22]">
         <div className="max-w-screen-xl min-h-screen flex items-center mx-auto ">
           <div className="w-full ">
-            <div className="w-full  shadow-lg shadow-green-500">
+            <div className="w-full  shadow-md shadow-green-500">
               <div className="p-10">
                 <div className="relative flex flex-wrap items-center p-5 my-8 -mx-4 border-b border-gray-200 dark:border-gray-700 xl:justify-between border-opacity-40 shadow-inner shadow-green-700">
                   <div className="w-full mb-2 lg:mb-0 h-96 md:h-44 md:w-44">

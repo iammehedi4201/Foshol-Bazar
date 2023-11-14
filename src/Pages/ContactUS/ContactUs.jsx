@@ -6,7 +6,7 @@ const ContactUs = () => {
     <div>
       {/* page header  */}
       <section className="bg-[#111827] relative s ">
-        <div className="w-[90%] flex mx-auto shadow-lg shadow-yellow-500">
+        <div className="w-[90%] flex mx-auto shadow-md shadow-yellow-500">
         <div className="flex items-center justify-center max-w-screen-xl min-h-[40vh] mx-auto">
           <section className="z-10 space-y-4">
             <h1 className="text-white font-bold text-4xl">Foshol Bazar</h1>

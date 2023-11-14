@@ -2,10 +2,10 @@ import React from "react";
 
 const ProductsType = () => {
   return (
-    <div className="bg-[#ffb524] p-10 relative">
+    <div className="bg-[#dfc13f] sm:p-10 p-5 relative">
       <div className="max-w-screen-xl flex items-center min-h-[70vh] mx-auto">
         <div>
-          <section className="flex items-center space-x-4">
+          <section  data-aos="fade-right"  className="flex items-center space-x-4">
             <svg
               style={{ height: "3em", width: "3em" }}
               viewBox="0 0 48 50"
@@ -100,15 +100,15 @@ const ProductsType = () => {
               ></path>
             </svg>
             <div>
-              <h1 className="font-bold text-white text-4xl">
+              <h1 className="font-bold text-black text-4xl">
                 Our Product Types
               </h1>
-              <h4 className="text-white text-xl">Always fresh and tasty</h4>
+              <h4 className="text-black text-xl">Always fresh and tasty</h4>
             </div>
           </section>
 
           <section className="w-full flex sm:flex-row flex-col sm:space-x-10 space-y-8 sm:space-y-0 mt-10">
-            <div className="card card-side bg-[#cad9ff] shadow-2xl shadow-red-600 w-full">
+            <div  data-aos="fade-right" className="card card-side bg-[#cad9ff] shadow-2xl shadow-red-600 w-full">
               <div className="w-1/2 my-auto">
                 <img className="w-full h-auto mx-auto"
                   src="https://amigos-themes.com/frutella/frutella-black/assets/images/content/720x540/blueberry.jpg"
@@ -122,7 +122,7 @@ const ProductsType = () => {
                 </div>
               </div>
             </div>
-            <div className=" w-full card card-side bg-[#ffbab5] shadow-red-700 shadow-2xl">
+            <div  data-aos="fade-right" className=" w-full card card-side bg-[#ffbab5] shadow-red-700 shadow-2xl">
               <div className="w-1/2 my-auto">
                 <img className="w-full h-auto mx-auto"
                   src='https://amigos-themes.com/frutella/frutella-black/assets/images/content/720x540/tomato.jpg'

@@ -3,7 +3,7 @@ import React from "react";
 const Shipping = () => {
   return (
     <div className="bg-[#1d1c22]">
-      <div className="flex items-center justify-center max-w-screen-xl min-h-[100vh] mx-auto p-10 first-letter ">
+      <div className="flex items-center justify-center w-full max-w-screen-xl min-h-[100vh] mx-auto p-10 first-letter ">
         <div className="space-y-20">
           <section className="flex flex-col justify-center items-center space-y-4 ">
             <svg
@@ -101,17 +101,17 @@ const Shipping = () => {
             </svg>
             <div className="z-10 text-center space-y-4">
               <h1 className="font-bold text-orange-500 text-4xl">
-              Shipping and payment
+                Shipping and payment
               </h1>
               <h4 className="text-white text-xl">
-              We'll do it as fast as possible
+                We'll do it as fast as possible
               </h4>
             </div>
           </section>
           <section>
             <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
               <div className=" rounded-lg ">
-                <div className="card w-full bg-indigo-500 shadow-lg shadow-orange-400 ">
+                <div data-aos="fade-right" className="card w-full bg-indigo-500 shadow-md shadow-orange-400 ">
                   <figure className="px-10 pt-10">
                     <img
                       src="https://amigos-themes.com/frutella/frutella-black/assets/images/parts/icons/50/orange/shopping-basket.png"
@@ -123,11 +123,11 @@ const Shipping = () => {
                     <h2 className="card-title font-bold text-white">Order</h2>
                     <p className="text-white font-semibold">Our manager will contact you to discuss the details of the order</p>
                   </div>
-                    
+
                 </div>
               </div>
               <div className=" rounded-lg">
-                <div className="card w-full bg-indigo-500 shadow-lg shadow-cyan-500  ">
+                <div data-aos="fade-right" className="card w-full bg-indigo-500 shadow-md shadow-cyan-500  ">
                   <figure className="px-10 pt-10">
                     <img
                       src="https://amigos-themes.com/frutella/frutella-black/assets/images/parts/icons/50/orange/card-payment.png"
@@ -142,7 +142,7 @@ const Shipping = () => {
                 </div>
               </div>
               <div className=" rounded-lg ">
-                <div className="card w-full bg-indigo-500 shadow-lg shadow-orange-400 ">
+                <div data-aos="fade-right" className="card w-full bg-indigo-500 shadow-md shadow-orange-400 ">
                   <figure className="px-10 pt-10">
                     <img
                       src="https://amigos-themes.com/frutella/frutella-black/assets/images/parts/icons/50/orange/shipped.png"
@@ -153,7 +153,7 @@ const Shipping = () => {
                   <div className="card-body items-center text-center">
                     <h2 className="card-title text-white font-bold">Delivery</h2>
                     <p className="text-white font-semibold">The courier will deliver the goods at a convenient time for you.</p>
-                    
+
                   </div>
                 </div>
               </div>

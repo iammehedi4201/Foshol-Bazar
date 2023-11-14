@@ -19,7 +19,7 @@ const OurTeams = () => {
               </div>
               <div className="grid grid-cols-1 gap-4 lg:gap-8 sm:gap-4 sm:grid-cols-2 lg:grid-cols-2">
                 <a
-                  className="flex flex-col flex-wrap mb-0 overflow-hidden rounded lg:flex-row bg-gray-800 shadow-lg shadow-[#0a4374]"
+                  className="flex flex-col flex-wrap mb-0 overflow-hidden rounded lg:flex-row bg-gray-800 shadow-md shadow-[#0a4374]"
                   href="#"
                 >
                   <div className="w-full overflow-hidden lg:w-2/4 h-80">
@@ -83,7 +83,7 @@ const OurTeams = () => {
                   </div>
                 </a>
                 <a
-                  className="flex flex-col flex-wrap mb-0 overflow-hidden rounded lg:flex-row bg-gray-800 shadow-lg shadow-[#0a4374]"
+                  className="flex flex-col flex-wrap mb-0 overflow-hidden rounded lg:flex-row bg-gray-800 shadow-md shadow-[#0a4374]"
                   href="#"
                 >
                   <div className="w-full overflow-hidden lg:w-2/4 h-80">
@@ -147,7 +147,7 @@ const OurTeams = () => {
                   </div>
                 </a>
                 <a
-                  className="flex flex-col flex-wrap mb-0 overflow-hidden rounded lg:flex-row shadow-lg shadow-[#0a4374] bg-gray-800"
+                  className="flex flex-col flex-wrap mb-0 overflow-hidden rounded lg:flex-row shadow-md shadow-[#0a4374] bg-gray-800"
                   href="#"
                 >
                   <div className="w-full overflow-hidden lg:w-2/4 h-80">
@@ -211,7 +211,7 @@ const OurTeams = () => {
                   </div>
                 </a>
                 <a
-                  className="flex flex-col flex-wrap mb-0 overflow-hidden rounded lg:flex-row shadow-lg shadow-[#0a4374] bg-gray-800"
+                  className="flex flex-col flex-wrap mb-0 overflow-hidden rounded lg:flex-row shadow-md shadow-[#0a4374] bg-gray-800"
                   href="#"
                 >
                   <div className="w-full overflow-hidden lg:w-2/4 h-80">

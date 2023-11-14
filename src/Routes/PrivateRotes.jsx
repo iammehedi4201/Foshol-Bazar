@@ -6,7 +6,7 @@ const PrivateRotes = ({ children }) => {
   const { user, loader } = useContext(AuthContext);
   let location = useLocation();
 
-  // console.log("loader status from Private route  :",loader);
+  console.log("loader status from Private route  :",loader);
 
   // console.log("User status from private route:",user);
 

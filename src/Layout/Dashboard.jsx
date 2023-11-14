@@ -4,6 +4,8 @@ import logo from '../assets/logo-removebg-preview.png'
 import DashboardNavbar from '../Shared/DashboardNavbar/DashboardNavbar';
 import useAdmin from '../Hooks/useAdmin';
 import useCart from '../Hooks/useCart';
+import { BiSolidCoupon } from "react-icons/bi";
+
 import './Dashboard.css'
 
 
@@ -23,7 +25,7 @@ const Dashboard = () => {
                         <Outlet></Outlet>
                     </div>
                 </div>
-                <div className="drawer-side w-full z-20 shadow-lg shadow-cyan-500">
+                <div className="drawer-side w-full z-20 shadow-md shadow-cyan-500">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <div className=" h-full px-5  py-8 overflow-y-auto bg-[#023e48]">
                         <h1 className='font-bold text-4xl uppercase mb-10  bg-slate-300  text-orange-500 rounded-lg shadow-2xl lg:hidden '>
@@ -105,6 +107,12 @@ const Dashboard = () => {
                                                 </defs>
                                             </svg>
                                             <span className="flex-1 ml-3 whitespace-nowrap font-bold uppercase">All users</span>
+                                        </NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to="/dashboard/manageCoupons" className="flex items-center p-2 text-gray-100 hover:text-white rounded-lg  hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                                            <BiSolidCoupon></BiSolidCoupon>
+                                            <span className="flex-1 ml-3 whitespace-nowrap font-bold uppercase">Create Coupons</span>
                                         </NavLink>
                                     </li>
 

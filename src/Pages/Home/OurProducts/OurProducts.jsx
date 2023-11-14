@@ -19,7 +19,7 @@ const OurProducts = () => {
   return (
     <div className="bg-indigo-400 bg-img  relative">
       <div className=" max-w-screen-xl min-h-[100vh] mx-auto sm:p-10">
-        <section className="flex flex-col justify-center items-center space-y-4 ">
+        <section  className="flex flex-col justify-center items-center space-y-4 ">
           <svg
             style={{ height: "3em", width: "3em" }}
             viewBox="0 0 48 50"
@@ -134,12 +134,12 @@ const OurProducts = () => {
                   </Tab>
                 </Tab.List>
                 <Tab.Panels>
-                  <Tab.Panel className="text-white w-full">
+                  <Tab.Panel className="text-white w-full"  data-aos="fade-right">
                     <div className="grid grid-cols-1 gap-4 lg:gap-10 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
                       {products.slice(0, 6).map((product) => (
-                        <div
+                        <div data-aos="fade-up"
                           key={product._id}
-                          className="overflow-hidden  bg-white rounded-lg shadow-xl shadow-red-600 dark:bg-gray-700 "
+                          className="overflow-hidden  bg-white rounded-lg shadow-md shadow-red-600 dark:bg-gray-700 "
                         >
                           <a
                             href="#"
@@ -238,12 +238,12 @@ const OurProducts = () => {
                       <button className="btn btn-wide btn-info btn-outline">See More</button>
                     </div>
                   </Tab.Panel>
-                  <Tab.Panel className="">
+                  <Tab.Panel className="" data-aos="fade-right">
                     <div className="grid grid-cols-1 gap-4 lg:gap-10 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
                       {products.slice(0, 6).map((product) => (
-                        <div
+                        <div data-aos="fade-up"
                           key={product._id}
-                          className="overflow-hidden  bg-white rounded-lg shadow-xl shadow-red-600 dark:bg-gray-700 "
+                          className="overflow-hidden  bg-white rounded-lg shadow-md shadow-red-600 dark:bg-gray-700 "
                         >
                           <a
                             href="#"
@@ -342,12 +342,12 @@ const OurProducts = () => {
                       <button className="btn btn-wide btn-info btn-outline">See More</button>
                     </div>
                   </Tab.Panel>
-                  <Tab.Panel className="textwhite">
+                  <Tab.Panel className="text-white" data-aos="fade-right">
                     <div className="grid grid-cols-1 gap-4 lg:gap-10 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
                       {products.slice(0, 6).map((product) => (
-                        <div
+                        <div data-aos="fade-up"
                           key={product._id}
-                          className="overflow-hidden  bg-white rounded-lg shadow-xl shadow-red-600 dark:bg-gray-700 "
+                          className="overflow-hidden  bg-white rounded-lg shadow-md shadow-red-600 dark:bg-gray-700 "
                         >
                           <a
                             href="#"

@@ -39,7 +39,7 @@ const FlowChartOfProducts = () => {
 
     return (
         <div className="grid grid-cols-1 my-4 xl:grid-cols-2 xl:gap-4">
-            <div className="p-4 bg-white border border-gray-200 rounded-lg shadow-xl shadow-cyan-900 dark:border-gray-700 sm:p-6 dark:bg-[#1d1c22] ">
+            <div className="p-4 bg-white border border-gray-200 rounded-lg shadow-md shadow-cyan-900 dark:border-gray-700 sm:p-6 dark:bg-[#1d1c22] ">
                 <div className="items-center justify-between pb-4 border-b border-gray-200 sm:flex dark:border-gray-700">
                     <div className="w-full mb-4 sm:mb-0">
                         <h3 className="text-base font-normal text-gray-500 dark:text-gray-400">Sales by category</h3>
@@ -135,7 +135,7 @@ const FlowChartOfProducts = () => {
                     </div>
                 </div>
             </div>
-            <div className="p-4 bg-white border border-gray-200 rounded-lg shadow-xl shadow-cyan-900 dark:border-gray-700 sm:p-6 dark:bg-[#1d1c22] ">
+            <div className="p-4 bg-white border border-gray-200 rounded-lg shadow-md shadow-cyan-900 dark:border-gray-700 sm:p-6 dark:bg-[#1d1c22] ">
                 <div className="flex items-center justify-between pb-4 mb-4 border-b border-gray-200 dark:border-gray-700">
                     <div>
                         <h3 className="text-base font-normal text-gray-500 dark:text-gray-400">Traffic by device</h3>

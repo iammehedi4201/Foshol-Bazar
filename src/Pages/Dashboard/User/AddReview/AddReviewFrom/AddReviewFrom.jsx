@@ -7,11 +7,11 @@ import toast from 'react-hot-toast';
 import useAxiosSecure from '../../../../../Hooks/useAxiosSecure';
 import { AuthContext } from '../../../../../Providers/AuthProvider';
 import PageHeader from '../../../../../Shared/PageHeader/pageHeader';
-import { useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const AddReviewFrom = () => {
     const { id } = useParams();
-    const [productID, cartId] = id.split(" ")
+    const [uid, orderId] = id.split(" ")
     const [axiosSecure] = useAxiosSecure()
     const { user } = useContext(AuthContext)
     const [rating, setRating] = useState(5);
@@ -19,8 +19,8 @@ const AddReviewFrom = () => {
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = async (formData) => {
         const data = {
-            cartId,
-            productID,
+            orderId,
+            uid,
             userName: user?.displayName,
             userEmail: user?.email,
             photo: user?.photoURL,
@@ -39,7 +39,6 @@ const AddReviewFrom = () => {
             })
 
     };
-
 
 
     return (

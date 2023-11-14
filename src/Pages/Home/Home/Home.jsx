@@ -14,7 +14,7 @@ import Contact from "../Contact/Contact";
 
 const Home = () => {
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen pt-28 ">
       <Carasoul></Carasoul>
       <AboutUs></AboutUs>
       <ProductsType></ProductsType>

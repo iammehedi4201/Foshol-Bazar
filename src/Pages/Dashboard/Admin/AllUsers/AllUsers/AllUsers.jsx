@@ -201,7 +201,7 @@ const AllUsers = () => {
             </div>
             {/* Edit User Modal */}
             <dialog id="my_modal_3" className="modal ">
-                <div className="modal-box Edit-modal-box relative shadow-xl shadow-cyan-800">
+                <div className="modal-box Edit-modal-box relative shadow-md shadow-cyan-800">
                     <form method="dialog">
                         {/* if there is a button in form, it will close the modal */}
                         {/* Modal content */}

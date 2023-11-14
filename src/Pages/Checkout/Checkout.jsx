@@ -6,13 +6,16 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import CheckoutProductRow from "./CheckoutProductRow/CheckoutProductRow";
 import { toast } from "react-hot-toast";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import { useLocation } from "react-router-dom";
 
 const Checkout = () => {
   const [axiosSecure] = useAxiosSecure();
   const { user } = useContext(AuthContext);
   const [loadedCartItems, setLoadedCartItems] = useState([]);
   const [selectedMethod, setSelectedMethod] = useState("pathao"); //for delivery choose
-
+  const location = useLocation();
+  let shippingCharge = 50;
+  console.log("The total Amount is :-", location.state);
 
   const modifiedCartItems = [];
 
@@ -33,7 +36,7 @@ const Checkout = () => {
 
   //loading carts item
   useEffect(() => {
-    fetch(`https://foshol-bazar-server-site.vercel.app/cart-items?email=${user?.email}`, {
+    fetch(`https://foshol-bazar.onrender.com/cart-items?email=${user?.email}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("bazar-access-token")}`
@@ -46,12 +49,8 @@ const Checkout = () => {
       .catch((error) => console.error(error));
   }, [user.email]);
 
-  //Total Calculation
-  let sumOfTotal = 0;
-  let shippingCharge = 50;
-  for (const order of loadedCartItems) {
-    sumOfTotal = sumOfTotal + order.productPrice * order.productQuantity;
-  }
+
+
 
   //handle orderInfo
   const hanldeOrderInfo = async (e) => {
@@ -65,6 +64,7 @@ const Checkout = () => {
     const orderInfo = {
       customerName: user.displayName,
       customerEmail: user.email,
+      customerImg: user?.photoURL,
       phoneNumber,
       shippingAddress: {
         address,
@@ -75,7 +75,7 @@ const Checkout = () => {
       deilveryMethod: selectedMethod,
       orderItems: modifiedCartItems,
       cartItemId: loadedCartItems.map(item => item._id),
-      totalPrice: sumOfTotal + shippingCharge
+      totalPrice: location.state
     };
 
     const response = await axiosSecure.post('/orders', orderInfo)
@@ -191,7 +191,7 @@ const Checkout = () => {
               {/* Payment part  */}
 
               <form onSubmit={hanldeOrderInfo}>
-                <div className="mt-10 bg-[#1d1c22] p-8 pt-8 lg:mt-0 text-black rounded-r-lg  shadow-lg shadow-green-500">
+                <div className="mt-10 bg-[#1d1c22] p-8 pt-8 lg:mt-0 text-black rounded-r-lg  shadow-md shadow-green-500">
                   <p className="text-xl text-teal-500  font-medium">
                     Payment Details
                   </p>
@@ -288,7 +288,7 @@ const Checkout = () => {
                         <p className="text-sm font-medium text-white">
                           Subtotal
                         </p>
-                        <p className="font-semibold text-white">${sumOfTotal}</p>
+                        <p className="font-semibold text-white">${location.state}</p>
                       </div>
                       <div className="flex items-center justify-between">
                         <p className="text-sm font-medium text-white">
@@ -300,7 +300,7 @@ const Checkout = () => {
                     <div className="mt-6 flex items-center justify-between">
                       <p className="text-sm font-medium text-white">Total</p>
                       <p className="text-2xl font-semibold text-white">
-                        ${sumOfTotal + shippingCharge}
+                        ${location.state}
                       </p>
                     </div>
                   </div>

@@ -5,6 +5,7 @@ import StatisticThisMonth from '../StatisticThisMonth/StatisticThisMonth';
 import FlowChartOfProducts from '../FlowChartOfProducts/FlowChartOfProducts';
 import LastesActvityCards from '../LastestActvityCards/LastesActvityCards';
 import ManageOrders from '../../ManageOrders/ManageOrders/ManageOrders';
+import Coupons from '../../Coupons/Coupons/Coupons';
 
 const AdminHome = () => {
     return (

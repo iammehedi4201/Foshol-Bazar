@@ -45,6 +45,8 @@ const Login = () => {
       }).then(() => {
         form.reset();
         navigate(from, { replace: true });
+        window.location.reload(); // Refresh the page
+
       });
     } catch (error) {
       console.log(error.message);
@@ -71,10 +73,10 @@ const Login = () => {
         <div className="section-back-text">LogIn</div>
       </section>
       {/* -------------*/}
-      <section className="bg-[#1d1c22]">
+      <section className="bg-[#1d1c22] ">
         <div className="flex items-center justify-center max-w-screen-xl min-h-screen mx-auto p-5">
           <div className="sm:w-4/5 w-full">
-            <div className="bg-gray-100 text-gray-500 shadow-xl shadow-purple-500 w-full overflow-hidden">
+            <div className="bg-gray-100 text-gray-500 shadow-md shadow-purple-500 w-full overflow-hidden">
               <div className="md:flex w-full">
                 <div className="hidden md:block w-1/2 bg-[#1d1c22] py-10 px-10 ">
                   <svg

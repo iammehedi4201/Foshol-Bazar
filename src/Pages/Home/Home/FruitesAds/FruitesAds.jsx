@@ -6,14 +6,14 @@ const FruitesAds = () => {
     <div className="bg-[#1d1c22]">
       <div className="flex items-center max-w-screen-xl min-h-[100vh] mx-auto">
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8">
-          <div className="rounded-lg bg-[#1d1c22] shadow-lg shadow-orange-400 p-5">
+          <div  data-aos="fade-right" className="rounded-lg bg-[#1d1c22] shadow-md shadow-orange-400 p-5">
             <img
               className="w-5/6"
               src="https://amigos-themes.com/frutella/frutella-black/assets/images/content/x/orange-juice.png"
               alt=""
             />
           </div>
-          <div className="rounded-lg bg-[#1d1c22] space-y-5 shadow-lg shadow-orange-400 p-5">
+          <div  data-aos="fade-right" className="rounded-lg bg-[#1d1c22] space-y-5 shadow-md shadow-orange-400 p-5">
             <h2 className="text-[#ffb524] font-bold text-4xl">
               Fresh Orange Jusice
             </h2>

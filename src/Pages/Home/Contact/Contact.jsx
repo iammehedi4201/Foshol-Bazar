@@ -5,7 +5,7 @@ const Contact = () => {
     return (
         <div className='bg-[#111827]'>
             <div className='max-w-screen-xl min-h-[100vh] mx-auto sm:p-10 '>
-                <div className='shadow-indigo-700 shadow-lg'>
+                <div className='shadow-indigo-700 shadow-md'>
                     <section className="relative overflow-hidden dark:bg-gray-900 font-poppins">
                         <div className="absolute bottom-0 left-0 hidden w-full h-full lg:block lg:w-6/12">
                             <img className="object-cover w-full h-full"
@@ -13,8 +13,8 @@ const Contact = () => {
                         </div>
                         <div className="container relative px-4 mx-auto">
                             <div className="max-w-5xl mx-auto">
-                                <div className="flex flex-col-reverse py-20 -mx-4 lg:flex-row 2xl:py-40">
-                                    <div className="w-full px-4 lg:w-3/5">
+                                <div  className="flex flex-col-reverse py-20 -mx-4 lg:flex-row 2xl:py-40">
+                                    <div data-aos="fade-left" className="w-full px-4 lg:w-3/5">
                                         <div
                                             className="w-full px-8 py-8 bg-white border rounded-md shadow-orange-500 shadow-inner dark:border-gray-800 dark:bg-gray-800 lg:ml-20 lg:max-w-md">
                                             <form action="">
@@ -46,7 +46,7 @@ const Contact = () => {
                                             </form>
                                         </div>
                                     </div>
-                                    <div className="w-full px-6 mb-8 lg:w-2/5 lg:mb-0 shadow-orange-500 shadow-lg ">
+                                    <div data-aos="fade-right" className="w-full px-6 mb-8 lg:w-2/5 lg:mb-0 shadow-orange-500 shadow-md ">
                                         <span className="text-lg font-bold text-blue-500 dark:text-blue-400">Connect with us </span>
                                         <h2 className="mt-6 mb-8 text-4xl font-bold md:mb-10 text-orange-500">Lets get connected</h2>
                                         <div className="flex items-center mb-6">
